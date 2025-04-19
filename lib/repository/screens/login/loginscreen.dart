@@ -4,8 +4,11 @@ import 'package:chatapp/repository/screens/widgets/uihelper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class Loginscreen extends StatelessWidget {
   TextEditingController phoneController = TextEditingController();
+
+  Loginscreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +49,8 @@ class Loginscreen extends StatelessWidget {
                 controller: phoneController,
                 text: "Phone Number",
                 textinputtype: TextInputType.number,
-                context: context),
+                context: context,
+                icondata: (Icons.phone)),
           ],
         ),
       ),

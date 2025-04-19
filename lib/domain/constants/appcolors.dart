@@ -17,4 +17,5 @@ class AppColors {
   static const Color otpdarkmode = Color(0xFF152033);
   static const Color otptextlight = Color(0xFF002DE3);
   static const Color otptextdark = Color(0xFFF7F7FC);
+  static const Color iconlight = Color(0xFFADB5BD);
 }

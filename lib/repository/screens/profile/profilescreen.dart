@@ -1,4 +1,7 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:chatapp/domain/constants/appcolors.dart';
+import 'package:chatapp/repository/screens/bottomnav/bottomnavigationscreen.dart';
 import 'package:chatapp/repository/screens/widgets/uihelper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +9,8 @@ import 'package:flutter/material.dart';
 class ProfileScreen extends StatelessWidget {
   TextEditingController firstnameController = TextEditingController();
   TextEditingController lastnameController = TextEditingController();
+
+  ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +45,8 @@ class ProfileScreen extends StatelessWidget {
                 controller: firstnameController,
                 text: "First Name (Required)",
                 textinputtype: TextInputType.name,
-                context: context),
+                context: context,
+                icondata: (Icons.person)),
             SizedBox(
               height: 10,
             ),
@@ -48,12 +54,18 @@ class ProfileScreen extends StatelessWidget {
                 controller: lastnameController,
                 text: "Last Name (Required)",
                 textinputtype: TextInputType.name,
-                context: context),
+                context: context,
+                icondata: (CupertinoIcons.person_2)),
           ],
         ),
       ),
-      floatingActionButton:
-          Uihelper.CustomButton(buttonname: "Save", callback: () {}),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: Uihelper.CustomButton(
+          buttonname: "Save",
+          callback: () {
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) => BottomNavscreen()));
+          }),
     );
   }
 }

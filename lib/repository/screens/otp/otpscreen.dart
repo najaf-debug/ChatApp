@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:chatapp/domain/constants/appcolors.dart';
 import 'package:chatapp/repository/screens/profile/profilescreen.dart';
 import 'package:chatapp/repository/screens/widgets/uihelper.dart';
@@ -6,6 +8,8 @@ import 'package:pinput/pinput.dart';
 
 class Otpscreen extends StatelessWidget {
   TextEditingController otpcontroller = TextEditingController();
+
+  Otpscreen({super.key});
 
   @override
   Widget build(BuildContext context) {
